@@ -1,9 +1,25 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import logo from './logo.svg';
+
+function ClickButton() {
+
+  const [clicks, setClicks] = useState(0);
+
+  return (
+    <button onClick={ () => setClicks(old => old + 1) }>click! { clicks } times</button>
+  );
+}
 
 function App() {
   return (
     <div className="App">
+
+      <ClickButton />
+      <ClickButton />
+
+      <br />
+
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
